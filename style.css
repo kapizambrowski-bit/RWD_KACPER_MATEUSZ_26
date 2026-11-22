@@ -1,0 +1,1056 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap');
+
+:root {
+  --color-primary: #1d3557;
+  --color-secondary: #457b9d;
+  --color-cta: #b5172b;
+  --color-text: #222222;
+
+  --color-surface: color-mix(in srgb, var(--color-primary) 4%, #fff);
+  --color-surface-alt: color-mix(in srgb, var(--color-secondary) 9%, #fff);
+  --color-surface-cta: color-mix(in srgb, var(--color-cta) 8%, #fff);
+  --color-border: color-mix(in srgb, var(--color-primary) 15%, #fff);
+  --color-border-strong: color-mix(in srgb, var(--color-primary) 28%, #fff);
+  --color-muted: color-mix(in srgb, var(--color-text) 78%, #fff);
+  --color-primary-dark: color-mix(in srgb, var(--color-primary) 78%, #000);
+  --color-secondary-dark: color-mix(in srgb, var(--color-secondary) 72%, #000);
+  --color-cta-hover: color-mix(in srgb, var(--color-cta) 82%, #000);
+  --color-footer-text: color-mix(in srgb, #fff 90%, var(--color-primary));
+  --color-shadow: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  --color-shadow-strong: color-mix(in srgb, var(--color-primary) 20%, transparent);
+
+  --font-heading: "Lora", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+}
+
+/* ==========================================================================
+   Podstawy i typografia
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: #fff;
+  line-height: 1.65;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+main section[id],
+main div[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+a:hover {
+  color: var(--color-cta);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-cta);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-muted-brand {
+  color: var(--color-muted);
+}
+
+.text-brand-primary {
+  color: var(--color-primary);
+}
+
+.text-brand-cta {
+  color: var(--color-cta);
+}
+
+/* Link pomijania nawigacji (dostępność) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  background-color: var(--color-cta);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+  top: 0.75rem;
+  color: #fff;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   Komponent Bootstrap 1: Nawigacja (.navbar)
+   ========================================================================== */
+.site-navbar {
+  background-color: var(--color-primary);
+  border-bottom: 3px solid var(--color-secondary);
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  box-shadow: 0 4px 16px var(--color-shadow);
+}
+
+.site-navbar .navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  min-height: 44px;
+  min-width: 44px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.site-navbar .navbar-brand:hover,
+.site-navbar .navbar-brand:focus {
+  color: #fff;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-cta);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.brand-accent {
+  color: var(--color-footer-text);
+  font-weight: 600;
+}
+
+.site-navbar .navbar-toggler {
+  min-width: 44px;
+  min-height: 44px;
+  border: 2px solid #fff;
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.65rem;
+}
+
+.site-navbar .nav-link {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link:focus {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.site-navbar .nav-link.active {
+  background-color: var(--color-secondary);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: inset 0 -3px 0 #fff;
+}
+
+.site-navbar .nav-link.nav-cart-link {
+  background-color: var(--color-cta);
+  color: #fff;
+  font-weight: 600;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.site-navbar .nav-link.nav-cart-link:hover,
+.site-navbar .nav-link.nav-cart-link:focus {
+  background-color: var(--color-cta-hover);
+  color: #fff;
+}
+
+.site-navbar .nav-link.nav-cart-link.active {
+  background-color: var(--color-cta-hover);
+  box-shadow: inset 0 -3px 0 #fff;
+}
+
+/* ==========================================================================
+   Komponent Bootstrap 2: Przyciski (.btn) – gwarancja 44x44 px
+   ========================================================================== */
+.btn {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 0.625rem 1.15rem;
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-cta {
+  background-color: var(--color-cta);
+  border: 2px solid var(--color-cta);
+  color: #fff;
+}
+
+.btn-cta:hover,
+.btn-cta:focus,
+.btn-cta:active {
+  background-color: var(--color-cta-hover);
+  border-color: var(--color-cta-hover);
+  color: #fff;
+  box-shadow: 0 6px 14px var(--color-shadow-strong);
+}
+
+.btn-primary-brand {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary-brand:hover,
+.btn-primary-brand:focus,
+.btn-primary-brand:active {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #fff;
+  box-shadow: 0 6px 14px var(--color-shadow);
+}
+
+.btn-secondary-brand {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  color: #fff;
+}
+
+.btn-secondary-brand:hover,
+.btn-secondary-brand:focus,
+.btn-secondary-brand:active {
+  background-color: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+  color: #fff;
+}
+
+.btn-outline-brand {
+  background-color: #fff;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline-brand:hover,
+.btn-outline-brand:focus,
+.btn-outline-brand:active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-outline-danger-brand {
+  background-color: #fff;
+  border: 2px solid var(--color-cta);
+  color: var(--color-cta);
+}
+
+.btn-outline-danger-brand:hover,
+.btn-outline-danger-brand:focus,
+.btn-outline-danger-brand:active {
+  background-color: var(--color-cta);
+  border-color: var(--color-cta);
+  color: #fff;
+}
+
+.btn-outline-light-brand {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline-light-brand:hover,
+.btn-outline-light-brand:focus,
+.btn-outline-light-brand:active {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Sekcje ogólne i Hero
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 62%, var(--color-secondary-dark) 100%);
+  color: #fff;
+  padding: 3.75rem 0;
+  border-bottom: 4px solid var(--color-cta);
+}
+
+.hero-section h1,
+.hero-section .h2,
+.hero-section h2 {
+  color: #fff;
+}
+
+.hero-lead {
+  color: var(--color-footer-text);
+  font-size: 1.08rem;
+  max-width: 58ch;
+}
+
+.hero-showcase-card {
+  background-color: #fff;
+  color: var(--color-text);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--color-secondary);
+  box-shadow: 0 18px 36px var(--color-shadow-strong);
+}
+
+.hero-showcase-card h2,
+.hero-showcase-card h3,
+.hero-showcase-card .h5 {
+  color: var(--color-primary);
+}
+
+.hero-showcase-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.section-surface {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-padding {
+  padding: 3.75rem 0;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-cta);
+  margin-bottom: 0.45rem;
+}
+
+.trust-strip {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.65rem 0;
+}
+
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.trust-icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Komponent Bootstrap 3: Karty (.card) – estetyka sklepu PC
+   ========================================================================== */
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: #fff;
+  box-shadow: 0 4px 12px var(--color-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.product-card:hover,
+.blog-card:hover,
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-secondary);
+  box-shadow: 0 14px 28px var(--color-shadow-strong);
+}
+
+.product-card .card-img-top,
+.blog-card .card-img-top {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-top-left-radius: calc(var(--radius-md) - 1px);
+  border-top-right-radius: calc(var(--radius-md) - 1px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.product-card .card-body,
+.blog-card .card-body {
+  padding: 1.25rem;
+}
+
+.product-card .card-title,
+.blog-card .card-title {
+  margin-bottom: 0.5rem;
+  min-height: 2.5em;
+}
+
+.card-footer-cta {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 2px solid var(--color-surface-alt);
+}
+
+.card-header-brand {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.spec-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.88rem;
+}
+
+.spec-list .spec-key {
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.spec-list .spec-val {
+  color: var(--color-text);
+  font-weight: 600;
+  text-align: right;
+}
+
+.price-tag {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.price-tag-lg {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.price-note {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ==========================================================================
+   Komponent Bootstrap 4: Etykiety (.badge) – kontrast WCAG AA
+   ========================================================================== */
+.badge {
+  font-weight: 600;
+  padding: 0.45em 0.75em;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+.badge-brand {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.badge-secondary-brand {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.badge-cta {
+  background-color: var(--color-cta);
+  color: #fff;
+}
+
+.badge-soft {
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Komponent Bootstrap 5: Okruszki (.breadcrumb)
+   ========================================================================== */
+.breadcrumb-bar {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.35rem 0;
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+  align-items: center;
+}
+
+.breadcrumb-item a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--color-cta);
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: var(--color-text);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: var(--color-muted);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* ==========================================================================
+   Komponent Bootstrap 6: Tabele (.table)
+   ========================================================================== */
+.table-brand {
+  margin-bottom: 0;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.table-brand thead th {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-color: var(--color-primary);
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table-brand tbody td,
+.table-brand tbody th {
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+  border-color: var(--color-border);
+}
+
+.table-brand.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.table-brand tbody tr:hover > * {
+  background-color: var(--color-surface-alt);
+}
+
+.cart-thumb {
+  width: 72px;
+  height: 54px;
+  min-width: 72px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.qty-input {
+  width: 5.25rem;
+  min-width: 5.25rem;
+}
+
+/* ==========================================================================
+   Komponent Bootstrap 7: Paginacja (.pagination) – min. 44x44 px
+   ========================================================================== */
+.pagination {
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.pagination .page-link {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background-color: #fff;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+}
+
+.pagination .page-link:hover,
+.pagination .page-link:focus {
+  background-color: var(--color-surface-alt);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ==========================================================================
+   Komponent Bootstrap 8: Formularze, Zakładki (.nav-tabs), Akordeon
+   ========================================================================== */
+.form-label {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.form-control,
+.form-select {
+  min-height: 44px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  background-color: #fff;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--color-secondary) 25%, transparent);
+}
+
+.form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
+  border: 2px solid var(--color-primary);
+}
+
+.form-check-input:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.form-check-label {
+  padding-left: 0.35rem;
+}
+
+.filter-fieldset {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-fieldset:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.nav-tabs {
+  border-bottom: 2px solid var(--color-border);
+  gap: 0.25rem;
+}
+
+.nav-tabs .nav-link {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-top-left-radius: var(--radius-sm);
+  border-top-right-radius: var(--radius-sm);
+  padding: 0.6rem 1.1rem;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.accordion-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 0.65rem;
+}
+
+.accordion-button {
+  min-height: 48px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: var(--color-primary);
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+.accordion-button:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--color-secondary) 25%, transparent);
+}
+
+.list-group-item-action {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-primary);
+  font-weight: 500;
+  border-color: var(--color-border);
+}
+
+.list-group-item-action:hover,
+.list-group-item-action:focus {
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary);
+}
+
+.list-group-item-action.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ==========================================================================
+   Komunikaty statusu, Koszyk, Produkt, Konfigurator, Blog, 404
+   ========================================================================== */
+.status-banner {
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-secondary);
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  font-weight: 500;
+}
+
+.status-banner-error {
+  background-color: var(--color-surface-cta);
+  border: 1px solid var(--color-cta);
+  border-left: 4px solid var(--color-cta);
+  color: var(--color-cta);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+}
+
+.empty-state-box {
+  background-color: var(--color-surface);
+  border: 2px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.product-main-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.product-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-border);
+}
+
+.product-thumb-active {
+  border-color: var(--color-cta);
+}
+
+.configurator-box {
+  background-color: #fff;
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 30px var(--color-shadow);
+}
+
+.config-summary-panel {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 1px solid var(--color-secondary);
+  box-shadow: 0 10px 24px var(--color-shadow-strong);
+}
+
+.config-summary-panel h2,
+.config-summary-panel h3 {
+  color: #fff;
+}
+
+.config-price-box {
+  background-color: var(--color-primary-dark);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.config-price-display {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.config-summary-meta {
+  color: var(--color-footer-text);
+  font-size: 0.86rem;
+}
+
+.article-featured-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.article-body h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.callout-box {
+  background-color: var(--color-surface-alt);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+}
+
+.error-code-display {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 12vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-cta);
+}
+
+.map-frame {
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   Stopka (.site-footer) – identyczna na wszystkich 11 stronach
+   ========================================================================== */
+.site-footer {
+  background-color: var(--color-primary);
+  color: var(--color-footer-text);
+  border-top: 4px solid var(--color-cta);
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.site-footer h2,
+.site-footer .footer-heading {
+  font-family: var(--font-heading);
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.2rem;
+}
+
+.footer-links a {
+  color: var(--color-footer-text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.94rem;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-contact-link {
+  color: #fff;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.footer-contact-link:hover,
+.footer-contact-link:focus {
+  color: var(--color-footer-text);
+}
+
+.footer-bottom {
+  border-top: 1px solid color-mix(in srgb, #fff 20%, var(--color-primary));
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   Responsywność (360px / 768px / 1280px)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .site-navbar .navbar-collapse {
+    padding-top: 0.75rem;
+  }
+
+  .site-navbar .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0.25rem;
+  }
+
+  .site-navbar .nav-link.nav-cart-link {
+    justify-content: center;
+    margin-top: 0.35rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 2.25rem 0;
+  }
+
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+
+  .price-tag {
+    font-size: 1.35rem;
+  }
+
+  .price-tag-lg,
+  .config-price-display {
+    font-size: 1.65rem;
+  }
+
+  .product-card .card-title,
+  .blog-card .card-title {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moje konto – Zamówienia i zapisane konfiguracje PC | VoltPC</title>
+  <meta name="description" content="Panel klienta VoltPC: śledź status montażu i testów obciążeniowych swoich zamówień, edytuj dane osobowe oraz adres dostawy i przeglądaj zapisane zestawy PC.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="VoltPC">
+  <meta property="og:title" content="Panel klienta | VoltPC">
+  <meta property="og:description" content="Zarządzaj swoimi zamówieniami zestawów PC, zapisanymi konfiguracjami oraz danymi dostawy w sklepie VoltPC.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta property="og:url" content="https://voltpc.pl/konto.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ComputerStore",
+    "name": "VoltPC – Panel klienta",
+    "url": "https://voltpc.pl/konto.html",
+    "image": "https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=1200&q=80",
+    "description": "Strefa klienta sklepu komputerowego VoltPC z podglądem statusu zamówień, zapisanych zestawów PC oraz edycją danych i adresu.",
+    "telephone": "+48 22 418 72 90",
+    "email": "kontakt@voltpc.pl",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Elektronowa 14",
+      "addressLocality": "Warszawa",
+      "postalCode": "02-674",
+      "addressCountry": "PL"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header sticky-top">
+    <a class="skip-link" href="#tresc-glowna">Przejdź do treści głównej</a>
+    <nav class="navbar navbar-expand-lg site-navbar" data-bs-theme="dark" aria-label="Nawigacja główna">
+      <div class="container">
+        <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html">
+          <span class="brand-mark" aria-hidden="true">V</span>
+          <span>Volt<span class="brand-accent">PC</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#glowneMenu" aria-controls="glowneMenu" aria-expanded="false" aria-label="Otwórz lub zamknij menu nawigacji">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="glowneMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Start</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sklep.html">Sklep</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#konfigurator">Konfigurator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Poradniki</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kontakt.html">Kontakt</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="konto.html">Moje konto</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="nav-link nav-cart-link" href="koszyk.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span>Koszyk (<span class="js-cart-count">0</span>)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="tresc-glowna">
+    <div class="breadcrumb-bar">
+      <div class="container">
+        <nav aria-label="Ścieżka okruszków">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Moje konto</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="mb-4">
+          <span class="section-eyebrow">Strefa klienta</span>
+          <h1 class="mb-1" id="konto-naglowek">Panel klienta – Jan Kowalski</h1>
+          <p class="text-muted-brand mb-0">Śledź postęp prac w montażowni, zarządzaj swoimi danymi i dodawaj zapisane zestawy komputerowe do koszyka.</p>
+        </div>
+
+        <div class="row g-4 align-items-start">
+          <!-- Boczne menu konta -->
+          <aside class="col-12 col-lg-3" aria-label="Menu panelu klienta">
+            <div class="list-group mb-4" id="menu-konta">
+              <a href="#ostatnie-zamowienia" class="list-group-item list-group-item-action active js-account-nav" aria-current="true">
+                <span>Zamówienia</span>
+                <span class="badge badge-cta">4</span>
+              </a>
+              <a href="#zapisane-konfiguracje" class="list-group-item list-group-item-action js-account-nav">
+                <span>Zapisane konfiguracje PC</span>
+                <span class="badge badge-soft">2</span>
+              </a>
+              <a href="#dane-konta" class="list-group-item list-group-item-action js-account-nav">
+                <span>Dane konta</span>
+              </a>
+              <a href="#adresy-dostawy" class="list-group-item list-group-item-action js-account-nav">
+                <span>Adresy dostawy</span>
+              </a>
+            </div>
+
+            <div class="card p-3">
+              <h2 class="h6 mb-2">Potrzebujesz wsparcia technicznego?</h2>
+              <p class="small text-muted-brand mb-3">Nasi technicy odpowiedzą na pytania o status testów obciążeniowych lub rozbudowę zestawu.</p>
+              <a href="kontakt.html#formularz-kontaktowy" class="btn btn-outline-brand w-100">Kontakt z serwisem</a>
+            </div>
+          </aside>
+
+          <!-- Główna zawartość panelu klienta -->
+          <div class="col-12 col-lg-9">
+            <!-- Szybkie podsumowanie -->
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-sm-4">
+                <div class="card p-3 h-100">
+                  <p class="small text-muted-brand mb-1">Aktywne zamówienia</p>
+                  <p class="h3 mb-0">1 w testach OCCT</p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="card p-3 h-100">
+                  <p class="small text-muted-brand mb-1">Zapisane zestawy PC</p>
+                  <p class="h3 mb-0">2 konfiguracje</p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <div class="card p-3 h-100">
+                  <p class="small text-muted-brand mb-1">Aktywna gwarancja</p>
+                  <p class="h3 mb-0">do 11.2029</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tabela ostatnich zamówień -->
+            <section id="ostatnie-zamowienia" class="mb-5">
+              <h2 class="h4 mb-3">Ostatnie zamówienia</h2>
+              <div class="card overflow-hidden">
+                <div class="table-responsive">
+                  <table class="table table-brand table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Numer</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Zamówiona konfiguracja / produkt</th>
+                        <th scope="col">Kwota</th>
+                        <th scope="col">Status realizacji</th>
+                        <th scope="col">Szczegóły</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">#VPC-2026-4812</th>
+                        <td>20.11.2026</td>
+                        <td>VoltPC Apex – Ryzen 7 9800X3D / RTX 5070 Ti + Windows 11</td>
+                        <td class="text-nowrap fw-semibold">9 048 zł</td>
+                        <td><span class="badge badge-cta">W trakcie testów obciążeniowych</span></td>
+                        <td><a href="produkt.html" class="btn btn-outline-brand">Podgląd</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">#VPC-2026-4309</th>
+                        <td>14.10.2026</td>
+                        <td>VoltPC Start RX 7600 XT – zestaw do biura i gier 1080p</td>
+                        <td class="text-nowrap fw-semibold">3 499 zł</td>
+                        <td><span class="badge badge-secondary-brand">Wysłano</span></td>
+                        <td><a href="sklep.html" class="btn btn-outline-brand">Sklep</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">#VPC-2026-3120</th>
+                        <td>05.06.2026</td>
+                        <td>VoltPC Nova – Ryzen 5 7500F / RTX 5060 Ti 16 GB</td>
+                        <td class="text-nowrap fw-semibold">4 899 zł</td>
+                        <td><span class="badge badge-brand">Zrealizowano</span></td>
+                        <td><a href="produkt.html" class="btn btn-outline-brand">Podgląd</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">#VPC-2025-9841</th>
+                        <td>19.11.2025</td>
+                        <td>Przegląd okresowy, wymiana pasty i czyszczenie układu chłodzenia</td>
+                        <td class="text-nowrap fw-semibold">199 zł</td>
+                        <td><span class="badge badge-brand">Zrealizowano</span></td>
+                        <td><a href="kontakt.html" class="btn btn-outline-brand">Serwis</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- Zapisane konfiguracje PC -->
+            <section id="zapisane-konfiguracje" class="mb-5">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                <h2 class="h4 mb-0">Zapisane konfiguracje PC</h2>
+                <a href="index.html#konfigurator" class="btn btn-primary-brand">Nowa konfiguracja</a>
+              </div>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <article class="card p-4 h-100 d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="badge badge-secondary-brand">Gaming 1440p</span>
+                      <span class="small text-muted-brand">Zapisano: 12.11.2026</span>
+                    </div>
+                    <h3 class="h5">Mój zestaw cichy do gier</h3>
+                    <ul class="spec-list mb-3">
+                      <li><span class="spec-key">CPU</span><span class="spec-val">AMD Ryzen 7 9800X3D</span></li>
+                      <li><span class="spec-key">GPU</span><span class="spec-val">Radeon RX 9070 XT 16 GB</span></li>
+                      <li><span class="spec-key">RAM / SSD</span><span class="spec-val">32 GB DDR5 / 2 TB NVMe</span></li>
+                      <li><span class="spec-key">Cena</span><span class="spec-val">7 499 zł</span></li>
+                    </ul>
+                    <div class="d-flex flex-wrap gap-2 mt-auto">
+                      <a href="koszyk.html" class="btn btn-cta flex-grow-1 js-add-cart" data-redirect="true" data-id="zapisana-cichy-gaming" data-name="Mój zestaw cichy do gier (zapisana konfiguracja)" data-variant="AMD Ryzen 7 9800X3D • Radeon RX 9070 XT 16 GB • 32 GB DDR5 • 2 TB NVMe" data-price="7499" data-image="https://images.unsplash.com/photo-1658673609646-9c7ba9514b89?auto=format&amp;fit=crop&amp;w=240&amp;q=80" data-url="konto.html#zapisane-konfiguracje">Dodaj do koszyka</a>
+                      <a href="index.html#konfigurator" class="btn btn-outline-brand">Edytuj</a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-6">
+                  <article class="card p-4 h-100 d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="badge badge-brand">Montaż wideo 4K</span>
+                      <span class="small text-muted-brand">Zapisano: 28.10.2026</span>
+                    </div>
+                    <h3 class="h5">Stacja robocza do biura</h3>
+                    <ul class="spec-list mb-3">
+                      <li><span class="spec-key">CPU</span><span class="spec-val">AMD Ryzen 9 9950X</span></li>
+                      <li><span class="spec-key">GPU</span><span class="spec-val">GeForce RTX 5070 Ti 16 GB</span></li>
+                      <li><span class="spec-key">RAM / SSD</span><span class="spec-val">64 GB DDR5 / 4 TB NVMe</span></li>
+                      <li><span class="spec-key">Cena</span><span class="spec-val">10 999 zł</span></li>
+                    </ul>
+                    <div class="d-flex flex-wrap gap-2 mt-auto">
+                      <a href="koszyk.html" class="btn btn-cta flex-grow-1 js-add-cart" data-redirect="true" data-id="zapisana-stacja-biuro" data-name="Stacja robocza do biura (zapisana konfiguracja)" data-variant="AMD Ryzen 9 9950X • GeForce RTX 5070 Ti 16 GB • 64 GB DDR5 • 4 TB NVMe" data-price="10999" data-image="https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&amp;fit=crop&amp;w=240&amp;q=80" data-url="konto.html#zapisane-konfiguracje">Dodaj do koszyka</a>
+                      <a href="kontakt.html#formularz-kontaktowy" class="btn btn-outline-brand">Wycena B2B</a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+
+            <!-- Dane konta i adresy z pełną edycją (localStorage) -->
+            <div class="row g-4">
+              <div class="col-12 col-md-6" id="dane-konta">
+                <div class="card p-4 h-100 d-flex flex-column">
+                  <h2 class="h5 mb-3">Dane konta</h2>
+                  <div id="komunikat-danych" class="status-banner d-none mb-3 small" role="status" aria-live="polite"></div>
+
+                  <div id="dane-konta-widok" class="d-flex flex-column flex-grow-1">
+                    <p class="mb-1"><strong>Imię i nazwisko:</strong> <span id="konto-imie-tekst">Jan Kowalski</span></p>
+                    <p class="mb-1"><strong>E-mail:</strong> <span id="konto-email-tekst">jan.kowalski@przyklad.pl</span></p>
+                    <p class="mb-1"><strong>Telefon:</strong> <span id="konto-telefon-tekst">+48 602 314 820</span></p>
+                    <p class="mb-4"><strong>Typ konta:</strong> <span id="konto-typ-tekst">Klient indywidualny i firmowy</span></p>
+                    <div class="mt-auto">
+                      <button type="button" id="btn-edytuj-dane" class="btn btn-primary-brand w-100">Edytuj dane</button>
+                    </div>
+                  </div>
+
+                  <form id="formularz-danych" class="d-none" action="konto.html#dane-konta" method="get">
+                    <div class="mb-3">
+                      <label for="edytuj-imie" class="form-label">Imię i nazwisko</label>
+                      <input type="text" id="edytuj-imie" name="imie_nazwisko" class="form-control" value="Jan Kowalski" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edytuj-email" class="form-label">Adres e-mail</label>
+                      <input type="email" id="edytuj-email" name="email" class="form-control" value="jan.kowalski@przyklad.pl" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edytuj-telefon" class="form-label">Telefon</label>
+                      <input type="tel" id="edytuj-telefon" name="telefon" class="form-control" value="+48 602 314 820" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edytuj-typ" class="form-label">Typ konta</label>
+                      <select id="edytuj-typ" name="typ_konta" class="form-select">
+                        <option value="Klient indywidualny">Klient indywidualny</option>
+                        <option value="Klient indywidualny i firmowy" selected>Klient indywidualny i firmowy</option>
+                        <option value="Konto firmowe B2B">Konto firmowe B2B</option>
+                      </select>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <button type="submit" class="btn btn-cta flex-grow-1">Zapisz zmiany</button>
+                      <button type="button" id="btn-anuluj-dane" class="btn btn-outline-brand">Anuluj</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6" id="adresy-dostawy">
+                <div class="card p-4 h-100 d-flex flex-column">
+                  <h2 class="h5 mb-3">Domyślny adres dostawy</h2>
+                  <div id="komunikat-adresu" class="status-banner d-none mb-3 small" role="status" aria-live="polite"></div>
+
+                  <div id="adres-widok" class="d-flex flex-column flex-grow-1">
+                    <p class="mb-1"><strong>Odbiorca:</strong> <span id="adres-odbiorca-tekst">Jan Kowalski</span></p>
+                    <p class="mb-1" id="adres-ulica-tekst">ul. Mokotowska 48/12</p>
+                    <p class="mb-1" id="adres-kod-miasto-tekst">00-543 Warszawa</p>
+                    <p class="mb-4"><strong>Przewoźnik:</strong> <span id="adres-przewoznik-tekst">Kurier DPD (ubezpieczenie)</span></p>
+                    <div class="d-grid gap-2 mt-auto">
+                      <button type="button" id="btn-edytuj-adres" class="btn btn-primary-brand">Edytuj adres</button>
+                      <a href="zamowienie.html" class="btn btn-outline-brand">Użyj w zamówieniu</a>
+                    </div>
+                  </div>
+
+                  <form id="formularz-adresu" class="d-none" action="konto.html#adresy-dostawy" method="get">
+                    <div class="mb-3">
+                      <label for="edytuj-odbiorca" class="form-label">Odbiorca</label>
+                      <input type="text" id="edytuj-odbiorca" name="odbiorca" class="form-control" value="Jan Kowalski" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edytuj-ulica" class="form-label">Ulica i numer</label>
+                      <input type="text" id="edytuj-ulica" name="ulica" class="form-control" value="ul. Mokotowska 48/12" required>
+                    </div>
+                    <div class="row g-2 mb-3">
+                      <div class="col-5">
+                        <label for="edytuj-kod" class="form-label">Kod pocztowy</label>
+                        <input type="text" id="edytuj-kod" name="kod_pocztowy" class="form-control" value="00-543" required>
+                      </div>
+                      <div class="col-7">
+                        <label for="edytuj-miasto" class="form-label">Miasto</label>
+                        <input type="text" id="edytuj-miasto" name="miasto" class="form-control" value="Warszawa" required>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="edytuj-przewoznik" class="form-label">Preferowany przewoźnik</label>
+                      <select id="edytuj-przewoznik" name="przewoznik" class="form-select">
+                        <option value="Kurier DPD (ubezpieczenie)" selected>Kurier DPD (ubezpieczenie)</option>
+                        <option value="Odbiór osobisty w salonie Warszawa">Odbiór osobisty w salonie Warszawa</option>
+                        <option value="Kurier InPost z ubezpieczeniem">Kurier InPost z ubezpieczeniem</option>
+                      </select>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <button type="submit" class="btn btn-cta flex-grow-1">Zapisz adres</button>
+                      <button type="button" id="btn-anuluj-adres" class="btn btn-outline-brand">Anuluj</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <p class="footer-heading d-flex align-items-center gap-2">
+            <span class="brand-mark" aria-hidden="true">V</span>
+            <span>VoltPC – Pracownia Komputerowa</span>
+          </p>
+          <p class="mb-3">Tworzymy wydajne zestawy PC dla graczy, twórców i firm. Każdy komputer przechodzi 24-godzinne testy obciążeniowe, posiada uporządkowane okablowanie oraz 3-letnią gwarancję Door-to-Door.</p>
+          <p class="mb-1"><strong>Adres montażowni:</strong> ul. Elektronowa 14, 02-674 Warszawa</p>
+          <p class="mb-1"><strong>Telefon:</strong> <a class="footer-contact-link" href="tel:+48224187290">+48 22 418 72 90</a></p>
+          <p class="mb-0"><strong>E-mail:</strong> <a class="footer-contact-link" href="mailto:kontakt@voltpc.pl">kontakt@voltpc.pl</a></p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <h2 class="footer-heading">Oferta sklepu</h2>
+          <ul class="footer-links">
+            <li><a href="sklep.html">Gotowe zestawy PC</a></li>
+            <li><a href="produkt.html">Polecany zestaw VoltPC Apex</a></li>
+            <li><a href="index.html#konfigurator">Konfigurator komputera PC</a></li>
+            <li><a href="koszyk.html">Koszyk zakupowy</a></li>
+            <li><a href="zamowienie.html">Realizacja zamówienia</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+          <h2 class="footer-heading">Strefa klienta</h2>
+          <ul class="footer-links">
+            <li><a href="konto.html">Moje konto i zamówienia</a></li>
+            <li><a href="blog.html">Poradniki i testy sprzętu</a></li>
+            <li><a href="single.html">PC do 5000 zł – poradnik</a></li>
+            <li><a href="kontakt.html">Kontakt i wycena PC</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h2 class="footer-heading">Informacje i gwarancja</h2>
+          <ul class="footer-links">
+            <li><a href="index.html#dlaczego-my">Standard montażu i testy OCCT</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności i RODO</a></li>
+            <li><a href="kontakt.html#formularz-kontaktowy">Formularz zapytania B2B</a></li>
+            <li><a href="konto.html#ostatnie-zamowienia">Status mojego zamówienia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+        <p class="mb-0">&copy; 2026 VoltPC Sp. z o.o. Wszystkie prawa zastrzeżone. Ceny podane w sklepie są cenami brutto (zawierają VAT 23%).</p>
+        <p class="mb-0">Godziny pracy: Pn–Pt 9:00–18:00, Sob 10:00–14:00</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
